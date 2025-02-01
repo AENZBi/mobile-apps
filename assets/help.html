@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="color-scheme" content="dark light">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convert the Example App</title>
+  <script src="android.js"></script>
+</head>
+<body>
+<h1>Make It Your Own</h1>
+<p>This page explains how the example app works and provides instructions to convert it into your own app.</p>
+
+<p>OpenAI, the company behind ChatGPT, offers an API that enables other apps to use AI capabilities in a highly customizable way. Using this API is not free, so controlling API usage is essential to manage costs.</p>
+
+<p>The example app already takes care of the following issues to ensure proper usage control:</p>
+<ul>
+  <li><strong>Secure the API key:</strong> The API key is not stored inside the app, preventing unauthorized use that could drain your OpenAI billing account. It is kept in a secure server environment.</li>
+  <li><strong>Limit per-user usage:</strong> User authentication and monitoring ensure that usage limits are enforced, protecting your budget.</li>
+  <li><strong>Limit input size:</strong> The app restricts the size of user input in a single request to avoid accidental quota exhaustion.</li>
+  <li><strong>Define system instructions:</strong> The system instructions ensure the API performs only the intended tasks, avoiding unintended responses.</li>
+</ul>
+
+<p>This example app uses Firebase for server-side functionality:</p>
+<ul>
+  <li><strong>Firebase Functions:</strong> Securely perform API requests on the server side.</li>
+  <li><strong>Realtime Database:</strong> Store the API key, configuration, and usage data.</li>
+  <li><strong>Google Sign-In:</strong> Authenticate users.</li>
+</ul>
+
+<h2>Instructions</h2>
+
+<p>1. In the <a href="https://platform.openai.com/api-keys">OpenAI API Console</a>, create an API key and store it securely.</p>
+
+<p>2. Perform the following steps in the <a href="https://console.firebase.google.com/u/0/">Firebase Console</a>:</p>
+<ul>
+  <li>Create a Firebase project.</li>
+  <li>Create a Realtime Database. Choose the locked access rules, which default to admin-only access.</li>
+  <li>Enable Google Authentication.</li>
+  <li>Switch to the Blaze plan (required for deploying server-side code).</li>
+  <li>Populate the Realtime Database with the following JSON:
+    <pre>
+{
+  "openai": {
+    "apiKey": "put your API key here",
+    "config": {
+      "model": "gpt-4o-mini"
+    },
+    "limits": {
+      "daily": 2000,
+      "monthly": 10000,
+      "maxPayloadSize": 200
+    }
+  }
+}
+      </pre>
+    Update the <code>apiKey</code> field with your OpenAI API key, and adjust the limits and model as needed.
+  </li>
+</ul>
+
+<p>3. Perform the following steps in App Builder:</p>
+<ul>
+  <li>On the app logic screen, change the package name to something unique.</li>
+  <li>Go to the Firebase screen for your app.</li>
+  <li>Select the Firebase project you created.</li>
+  <li>Add your app to the project.</li>
+  <li>Deploy your app to Firebase. If prompted, install the Termux app to run Firebase CLI for project management.</li>
+</ul>
+
+<p>If everything is set up correctly, your app will function like the original example, but using your Firebase account and OpenAI API key. You can then customize the app's behavior as needed.</p>
+
+<p>To customize the AI behavior, modify the <code>instruction</code> variable. Changing its value allows you to instruct the OpenAI API to perform entirely different tasks.</p>
+</body>
+</html>
