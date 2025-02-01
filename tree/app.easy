@@ -1,0 +1,3089 @@
+{
+    "_id_": 2,
+    "_type": "App",
+    "features": {
+        "_id_": 4,
+        "_type": "App.Features",
+        "list_": [
+            {
+                "_id_": 28317,
+                "_type": "Variable",
+                "init": {
+                    "_id_": 28318,
+                    "_type": "String",
+                    "value_": "Text to emoji, nothing else."
+                },
+                "name": {
+                    "_id_": 28319,
+                    "_type": "String",
+                    "value_": "instruction"
+                }
+            },
+            {
+                "_id_": 57,
+                "_type": "Activity",
+                "features": {
+                    "_id_": 59,
+                    "_type": "Activity.Features",
+                    "list_": [
+                        {
+                            "_id_": 29491,
+                            "_type": "Variable",
+                            "init": {
+                                "_id_": 29505,
+                                "_type": "True"
+                            },
+                            "name": {
+                                "_id_": 29493,
+                                "_type": "String",
+                                "value_": "isReadyForInput"
+                            }
+                        },
+                        {
+                            "_id_": 1879,
+                            "_type": "Activity.OnPostCreate",
+                            "action": {
+                                "_id_": 1882,
+                                "_type": "Sequence",
+                                "list_": [
+                                    {
+                                        "_id_": 13134,
+                                        "_type": "Fragment.Set",
+                                        "container": {
+                                            "_id_": 13135,
+                                            "_type": "View.Reference",
+                                            "ref": {
+                                                "_id_": 13136,
+                                                "_type": "String",
+                                                "value_": "@id\/container"
+                                            }
+                                        },
+                                        "fragment": {
+                                            "_id_": 13144,
+                                            "_type": "CheckValue",
+                                            "onTrue": {
+                                                "_id_": 13158,
+                                                "_type": "Fragment.Reference",
+                                                "name": {
+                                                    "_id_": 13159,
+                                                    "_type": "String",
+                                                    "value_": "translator"
+                                                }
+                                            },
+                                            "onFalse": {
+                                                "_id_": 13156,
+                                                "_type": "Fragment.Reference",
+                                                "name": {
+                                                    "_id_": 13157,
+                                                    "_type": "String",
+                                                    "value_": "signIn"
+                                                }
+                                            },
+                                            "value": {
+                                                "_id_": 13155,
+                                                "_type": "Firebase.Auth.IsSignedIn"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "menu": {
+                    "_id_": 24839,
+                    "_type": "Menu",
+                    "items": {
+                        "_id_": 24841,
+                        "_type": "List",
+                        "list_": [
+                            {
+                                "_id_": 24843,
+                                "_type": "Menu.Item",
+                                "title": {
+                                    "_id_": 24845,
+                                    "_type": "String",
+                                    "value_": "Help"
+                                },
+                                "action": {
+                                    "_id_": 25398,
+                                    "_type": "Activity.StartOwn",
+                                    "activity": {
+                                        "_id_": 25401,
+                                        "_type": "String",
+                                        "value_": "Help"
+                                    }
+                                },
+                                "id": {
+                                    "_id_": 24847,
+                                    "_type": "String",
+                                    "value_": "help"
+                                }
+                            }
+                        ],
+                        "elementType_": "Menu.Element"
+                    }
+                },
+                "contentView": {
+                    "_id_": 177,
+                    "_type": "FragmentContainerView",
+                    "id": {
+                        "_id_": 181,
+                        "_type": "String",
+                        "value_": "container"
+                    },
+                    "views": {
+                        "_id_": 179,
+                        "_type": "ViewList",
+                        "list_": []
+                    }
+                },
+                "toolbar": {
+                    "_id_": 21142,
+                    "_type": "Material.MaterialToolbar",
+                    "id": {
+                        "_id_": 21144,
+                        "_type": "String",
+                        "value_": ""
+                    },
+                    "app:title": {
+                        "_id_": 21842,
+                        "_type": "String",
+                        "value_": "Text-to-Emoji Translator"
+                    },
+                    "app:navigationIcon": {
+                        "_id_": 21838,
+                        "_type": "DrawableReference",
+                        "ref": {
+                            "_id_": 21840,
+                            "_type": "String",
+                            "value_": "@drawable\/app_icon"
+                        }
+                    }
+                },
+                "name": {
+                    "_id_": 68,
+                    "_type": "String",
+                    "value_": "Main"
+                },
+                "launcher": {
+                    "_id_": 81,
+                    "_type": "Activity.Launcher"
+                }
+            },
+            {
+                "_id_": 24851,
+                "_type": "Activity",
+                "features": {
+                    "_id_": 24853,
+                    "_type": "Activity.Features",
+                    "list_": []
+                },
+                "contentView": {
+                    "_id_": 24873,
+                    "_type": "WebView",
+                    "id": {
+                        "_id_": 24875,
+                        "_type": "String",
+                        "value_": ""
+                    },
+                    "url": {
+                        "_id_": 24877,
+                        "_type": "URL",
+                        "url": {
+                            "_id_": 25396,
+                            "_type": "String",
+                            "value_": "help.html"
+                        }
+                    }
+                },
+                "name": {
+                    "_id_": 24860,
+                    "_type": "String",
+                    "value_": "Help"
+                }
+            },
+            {
+                "_id_": 13126,
+                "_type": "Variable",
+                "init": {
+                    "_id_": 13127,
+                    "_type": "String",
+                    "value_": "I am happy"
+                },
+                "name": {
+                    "_id_": 13128,
+                    "_type": "String",
+                    "value_": "lastInput"
+                },
+                "persist": {
+                    "_id_": 13129,
+                    "_type": "Boolean",
+                    "value_": true
+                }
+            },
+            {
+                "_id_": 13022,
+                "_type": "Function",
+                "name": {
+                    "_id_": 13023,
+                    "_type": "String",
+                    "value_": "signIn"
+                },
+                "body": {
+                    "_id_": 13024,
+                    "_type": "Sequence",
+                    "list_": [
+                        {
+                            "_id_": 13025,
+                            "_type": "Fragment.Set",
+                            "container": {
+                                "_id_": 13026,
+                                "_type": "View.Reference",
+                                "ref": {
+                                    "_id_": 13027,
+                                    "_type": "String",
+                                    "value_": "@id\/container"
+                                }
+                            },
+                            "fragment": {
+                                "_id_": 13028,
+                                "_type": "Fragment.Reference",
+                                "name": {
+                                    "_id_": 13029,
+                                    "_type": "String",
+                                    "value_": "wait"
+                                }
+                            }
+                        },
+                        {
+                            "_id_": 13030,
+                            "_type": "Firebase.Auth.SignIn",
+                            "onSignedIn": {
+                                "_id_": 15271,
+                                "_type": "Fragment.Set",
+                                "container": {
+                                    "_id_": 15272,
+                                    "_type": "View.Reference",
+                                    "ref": {
+                                        "_id_": 15273,
+                                        "_type": "String",
+                                        "value_": "@id\/container"
+                                    }
+                                },
+                                "fragment": {
+                                    "_id_": 15274,
+                                    "_type": "Fragment.Reference",
+                                    "name": {
+                                        "_id_": 15275,
+                                        "_type": "String",
+                                        "value_": "translator"
+                                    }
+                                }
+                            },
+                            "onFailed": {
+                                "_id_": 13037,
+                                "_type": "Sequence",
+                                "list_": [
+                                    {
+                                        "_id_": 13038,
+                                        "_type": "ScopeVariable",
+                                        "name": {
+                                            "_id_": 13039,
+                                            "_type": "String",
+                                            "value_": "exception"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 13043,
+                                        "_type": "Fragment.Set",
+                                        "container": {
+                                            "_id_": 13044,
+                                            "_type": "View.Reference",
+                                            "ref": {
+                                                "_id_": 13045,
+                                                "_type": "String",
+                                                "value_": "@id\/container"
+                                            }
+                                        },
+                                        "fragment": {
+                                            "_id_": 13046,
+                                            "_type": "Fragment.Reference",
+                                            "name": {
+                                                "_id_": 13047,
+                                                "_type": "String",
+                                                "value_": "signInError"
+                                            }
+                                        },
+                                        "arguments": {
+                                            "_id_": 13160,
+                                            "_type": "Expression",
+                                            "text": {
+                                                "_id_": 13161,
+                                                "_type": "String",
+                                                "value_": "({error: exception.getMessage()})"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "onCanceled": {
+                                "_id_": 14738,
+                                "_type": "Fragment.Set",
+                                "container": {
+                                    "_id_": 14739,
+                                    "_type": "View.Reference",
+                                    "ref": {
+                                        "_id_": 14740,
+                                        "_type": "String",
+                                        "value_": "@id\/container"
+                                    }
+                                },
+                                "fragment": {
+                                    "_id_": 14741,
+                                    "_type": "Fragment.Reference",
+                                    "name": {
+                                        "_id_": 14745,
+                                        "_type": "String",
+                                        "value_": "signIn"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "_id_": 13086,
+                "_type": "Function",
+                "name": {
+                    "_id_": 13087,
+                    "_type": "String",
+                    "value_": "submit"
+                },
+                "body": {
+                    "_id_": 13088,
+                    "_type": "Sequence",
+                    "list_": [
+                        {
+                            "_id_": 29507,
+                            "_type": "Variable.Set",
+                            "name": {
+                                "_id_": 29514,
+                                "_type": "String",
+                                "value_": "isReadyForInput"
+                            },
+                            "value": {
+                                "_id_": 29516,
+                                "_type": "False"
+                            }
+                        },
+                        {
+                            "_id_": 13094,
+                            "_type": "Fragment.Set",
+                            "container": {
+                                "_id_": 13095,
+                                "_type": "View.Reference",
+                                "ref": {
+                                    "_id_": 13096,
+                                    "_type": "String",
+                                    "value_": "@id\/resultContainer"
+                                }
+                            },
+                            "fragment": {
+                                "_id_": 13097,
+                                "_type": "Fragment.Reference",
+                                "name": {
+                                    "_id_": 13098,
+                                    "_type": "String",
+                                    "value_": "processing"
+                                }
+                            }
+                        },
+                        {
+                            "_id_": 13099,
+                            "_type": "Variable.Set",
+                            "name": {
+                                "_id_": 13100,
+                                "_type": "String",
+                                "value_": "lastInput"
+                            },
+                            "value": {
+                                "_id_": 13101,
+                                "_type": "TextView.GetText",
+                                "view": {
+                                    "_id_": 13102,
+                                    "_type": "View.Reference",
+                                    "ref": {
+                                        "_id_": 13103,
+                                        "_type": "String",
+                                        "value_": "@id\/input"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "_id_": 13104,
+                            "_type": "Call",
+                            "name": {
+                                "_id_": 13105,
+                                "_type": "String",
+                                "value_": "obtainToken"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "_id_": 33958,
+                "_type": "Function",
+                "name": {
+                    "_id_": 33959,
+                    "_type": "String",
+                    "value_": "obtainToken"
+                },
+                "body": {
+                    "_id_": 33960,
+                    "_type": "Sequence",
+                    "list_": [
+                        {
+                            "_id_": 33961,
+                            "_type": "Firebase.Auth.GetIdToken",
+                            "onIdTokenReady": {
+                                "_id_": 33962,
+                                "_type": "Sequence",
+                                "list_": [
+                                    {
+                                        "_id_": 33963,
+                                        "_type": "ScopeVariable",
+                                        "name": {
+                                            "_id_": 33964,
+                                            "_type": "String",
+                                            "value_": "result"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 33965,
+                                        "_type": "ScopeVariable",
+                                        "name": {
+                                            "_id_": 33966,
+                                            "_type": "String",
+                                            "value_": "token"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 33967,
+                                        "_type": "ScopeVariable",
+                                        "name": {
+                                            "_id_": 33968,
+                                            "_type": "String",
+                                            "value_": "expiration"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 33969,
+                                        "_type": "Call",
+                                        "name": {
+                                            "_id_": 33970,
+                                            "_type": "String",
+                                            "value_": "translate"
+                                        },
+                                        "arguments": {
+                                            "_id_": 33971,
+                                            "_type": "List",
+                                            "list_": [
+                                                {
+                                                    "_id_": 33972,
+                                                    "_type": "LocalVariable.Get",
+                                                    "name": {
+                                                        "_id_": 33973,
+                                                        "_type": "String",
+                                                        "value_": "token"
+                                                    }
+                                                }
+                                            ],
+                                            "elementType_": "Action"
+                                        }
+                                    }
+                                ]
+                            },
+                            "onFailure": {
+                                "_id_": 33974,
+                                "_type": "Sequence",
+                                "list_": [
+                                    {
+                                        "_id_": 33975,
+                                        "_type": "ScopeVariable",
+                                        "name": {
+                                            "_id_": 33976,
+                                            "_type": "String",
+                                            "value_": "exception"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 33977,
+                                        "_type": "ScopeVariable",
+                                        "name": {
+                                            "_id_": 33978,
+                                            "_type": "String",
+                                            "value_": "message"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 33979,
+                                        "_type": "Fragment.Set",
+                                        "container": {
+                                            "_id_": 33980,
+                                            "_type": "View.Reference",
+                                            "ref": {
+                                                "_id_": 33981,
+                                                "_type": "String",
+                                                "value_": "@id\/container"
+                                            }
+                                        },
+                                        "fragment": {
+                                            "_id_": 33982,
+                                            "_type": "Fragment.Reference",
+                                            "name": {
+                                                "_id_": 33983,
+                                                "_type": "String",
+                                                "value_": "serverError"
+                                            }
+                                        },
+                                        "arguments": {
+                                            "_id_": 33984,
+                                            "_type": "AnObject",
+                                            "fields": {
+                                                "_id_": 33985,
+                                                "_type": "List",
+                                                "list_": [
+                                                    {
+                                                        "_id_": 33986,
+                                                        "_type": "KeyValue",
+                                                        "value": {
+                                                            "_id_": 33987,
+                                                            "_type": "Expression",
+                                                            "text": {
+                                                                "_id_": 33988,
+                                                                "_type": "String",
+                                                                "value_": "exception.getMessage()"
+                                                            }
+                                                        },
+                                                        "key": {
+                                                            "_id_": 33989,
+                                                            "_type": "String",
+                                                            "value_": "error"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "_id_": 12844,
+                "_type": "Function",
+                "name": {
+                    "_id_": 12845,
+                    "_type": "String",
+                    "value_": "translate"
+                },
+                "body": {
+                    "_id_": 12846,
+                    "_type": "Sequence",
+                    "list_": [
+                        {
+                            "_id_": 12847,
+                            "_type": "Argument",
+                            "name": {
+                                "_id_": 12848,
+                                "_type": "String",
+                                "value_": "token"
+                            }
+                        },
+                        {
+                            "_id_": 12849,
+                            "_type": "LocalVariable",
+                            "init": {
+                                "_id_": 12850,
+                                "_type": "TextView.GetText",
+                                "view": {
+                                    "_id_": 12851,
+                                    "_type": "View.Reference",
+                                    "ref": {
+                                        "_id_": 12852,
+                                        "_type": "String",
+                                        "value_": "@id\/input"
+                                    }
+                                }
+                            },
+                            "name": {
+                                "_id_": 12853,
+                                "_type": "String",
+                                "value_": "text"
+                            }
+                        },
+                        {
+                            "_id_": 12854,
+                            "_type": "LocalVariable",
+                            "init": {
+                                "_id_": 27656,
+                                "_type": "AnObject",
+                                "fields": {
+                                    "_id_": 27658,
+                                    "_type": "List",
+                                    "list_": [
+                                        {
+                                            "_id_": 27728,
+                                            "_type": "KeyValue",
+                                            "value": {
+                                                "_id_": 27730,
+                                                "_type": "String",
+                                                "value_": "\/v1\/chat\/completions"
+                                            },
+                                            "key": {
+                                                "_id_": 27732,
+                                                "_type": "String",
+                                                "value_": "urlPath"
+                                            }
+                                        },
+                                        {
+                                            "_id_": 27660,
+                                            "_type": "KeyValue",
+                                            "value": {
+                                                "_id_": 27665,
+                                                "_type": "AnObject",
+                                                "fields": {
+                                                    "_id_": 27666,
+                                                    "_type": "List",
+                                                    "list_": [
+                                                        {
+                                                            "_id_": 27667,
+                                                            "_type": "KeyValue",
+                                                            "value": {
+                                                                "_id_": 27671,
+                                                                "_type": "Array",
+                                                                "items": {
+                                                                    "_id_": 27673,
+                                                                    "_type": "List",
+                                                                    "list_": [
+                                                                        {
+                                                                            "_id_": 27704,
+                                                                            "_type": "AnObject",
+                                                                            "fields": {
+                                                                                "_id_": 27705,
+                                                                                "_type": "List",
+                                                                                "list_": [
+                                                                                    {
+                                                                                        "_id_": 27706,
+                                                                                        "_type": "KeyValue",
+                                                                                        "value": {
+                                                                                            "_id_": 27707,
+                                                                                            "_type": "String",
+                                                                                            "value_": "system"
+                                                                                        },
+                                                                                        "key": {
+                                                                                            "_id_": 27708,
+                                                                                            "_type": "String",
+                                                                                            "value_": "role"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "_id_": 27709,
+                                                                                        "_type": "KeyValue",
+                                                                                        "value": {
+                                                                                            "_id_": 27710,
+                                                                                            "_type": "Variable.Get",
+                                                                                            "name": {
+                                                                                                "_id_": 31949,
+                                                                                                "_type": "String",
+                                                                                                "value_": "instruction"
+                                                                                            }
+                                                                                        },
+                                                                                        "key": {
+                                                                                            "_id_": 27712,
+                                                                                            "_type": "String",
+                                                                                            "value_": "content"
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "_id_": 27675,
+                                                                            "_type": "AnObject",
+                                                                            "fields": {
+                                                                                "_id_": 27677,
+                                                                                "_type": "List",
+                                                                                "list_": [
+                                                                                    {
+                                                                                        "_id_": 27679,
+                                                                                        "_type": "KeyValue",
+                                                                                        "value": {
+                                                                                            "_id_": 27681,
+                                                                                            "_type": "String",
+                                                                                            "value_": "user"
+                                                                                        },
+                                                                                        "key": {
+                                                                                            "_id_": 27683,
+                                                                                            "_type": "String",
+                                                                                            "value_": "role"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "_id_": 27685,
+                                                                                        "_type": "KeyValue",
+                                                                                        "value": {
+                                                                                            "_id_": 27723,
+                                                                                            "_type": "LocalVariable.Get",
+                                                                                            "name": {
+                                                                                                "_id_": 27726,
+                                                                                                "_type": "String",
+                                                                                                "value_": "text"
+                                                                                            }
+                                                                                        },
+                                                                                        "key": {
+                                                                                            "_id_": 27689,
+                                                                                            "_type": "String",
+                                                                                            "value_": "content"
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            "key": {
+                                                                "_id_": 27669,
+                                                                "_type": "String",
+                                                                "value_": "messages"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "key": {
+                                                "_id_": 27664,
+                                                "_type": "String",
+                                                "value_": "payload"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "name": {
+                                "_id_": 12857,
+                                "_type": "String",
+                                "value_": "requestData"
+                            }
+                        },
+                        {
+                            "_id_": 12858,
+                            "_type": "Network.HttpRequest",
+                            "headers": {
+                                "_id_": 12859,
+                                "_type": "List",
+                                "list_": [
+                                    {
+                                        "_id_": 12860,
+                                        "_type": "KeyValue",
+                                        "value": {
+                                            "_id_": 12861,
+                                            "_type": "Expression",
+                                            "text": {
+                                                "_id_": 12862,
+                                                "_type": "String",
+                                                "value_": "\"Bearer \"+token"
+                                            }
+                                        },
+                                        "key": {
+                                            "_id_": 12863,
+                                            "_type": "String",
+                                            "value_": "Authorization"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 12864,
+                                        "_type": "KeyValue",
+                                        "value": {
+                                            "_id_": 12865,
+                                            "_type": "String",
+                                            "value_": "application\/json"
+                                        },
+                                        "key": {
+                                            "_id_": 12866,
+                                            "_type": "String",
+                                            "value_": "Content-Type"
+                                        }
+                                    }
+                                ]
+                            },
+                            "data": {
+                                "_id_": 12868,
+                                "_type": "Expression",
+                                "text": {
+                                    "_id_": 12869,
+                                    "_type": "String",
+                                    "value_": "JSON.stringify(requestData)"
+                                }
+                            },
+                            "method": {
+                                "_id_": 12870,
+                                "_type": "Network.RequestMethod",
+                                "value_": "POST"
+                            },
+                            "onFailure": {
+                                "_id_": 12871,
+                                "_type": "Sequence",
+                                "list_": [
+                                    {
+                                        "_id_": 35388,
+                                        "_type": "Variable.Set",
+                                        "name": {
+                                            "_id_": 35389,
+                                            "_type": "String",
+                                            "value_": "isReadyForInput"
+                                        },
+                                        "value": {
+                                            "_id_": 35390,
+                                            "_type": "True"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 12875,
+                                        "_type": "Fragment.Set",
+                                        "container": {
+                                            "_id_": 12876,
+                                            "_type": "View.Reference",
+                                            "ref": {
+                                                "_id_": 12877,
+                                                "_type": "String",
+                                                "value_": "@id\/container"
+                                            }
+                                        },
+                                        "fragment": {
+                                            "_id_": 12878,
+                                            "_type": "Fragment.Reference",
+                                            "name": {
+                                                "_id_": 12879,
+                                                "_type": "String",
+                                                "value_": "serverError"
+                                            }
+                                        },
+                                        "arguments": {
+                                            "_id_": 12880,
+                                            "_type": "AnObject",
+                                            "fields": {
+                                                "_id_": 12881,
+                                                "_type": "List",
+                                                "list_": [
+                                                    {
+                                                        "_id_": 12882,
+                                                        "_type": "KeyValue",
+                                                        "value": {
+                                                            "_id_": 32568,
+                                                            "_type": "Expression",
+                                                            "text": {
+                                                                "_id_": 32569,
+                                                                "_type": "String",
+                                                                "value_": "text"
+                                                            }
+                                                        },
+                                                        "key": {
+                                                            "_id_": 12885,
+                                                            "_type": "String",
+                                                            "value_": "text"
+                                                        }
+                                                    },
+                                                    {
+                                                        "_id_": 32561,
+                                                        "_type": "KeyValue",
+                                                        "value": {
+                                                            "_id_": 32566,
+                                                            "_type": "Expression",
+                                                            "text": {
+                                                                "_id_": 32567,
+                                                                "_type": "String",
+                                                                "value_": "exception"
+                                                            }
+                                                        },
+                                                        "key": {
+                                                            "_id_": 32565,
+                                                            "_type": "String",
+                                                            "value_": "exception"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "url": {
+                                "_id_": 12886,
+                                "_type": "String.Concat",
+                                "values": {
+                                    "_id_": 12887,
+                                    "_type": "List",
+                                    "list_": [
+                                        {
+                                            "_id_": 12888,
+                                            "_type": "String",
+                                            "value_": "https:\/\/"
+                                        },
+                                        {
+                                            "_id_": 12889,
+                                            "_type": "Expression",
+                                            "text": {
+                                                "_id_": 12890,
+                                                "_type": "String",
+                                                "value_": "com.google.firebase.FirebaseApp.getInstance().getOptions().getProjectId()"
+                                            }
+                                        },
+                                        {
+                                            "_id_": 12891,
+                                            "_type": "String",
+                                            "value_": ".web.app\/openai"
+                                        }
+                                    ]
+                                }
+                            },
+                            "timeout": {
+                                "_id_": 28904,
+                                "_type": "Integer",
+                                "value_": 15
+                            },
+                            "onSuccess": {
+                                "_id_": 12892,
+                                "_type": "Sequence",
+                                "list_": [
+                                    {
+                                        "_id_": 35382,
+                                        "_type": "Variable.Set",
+                                        "name": {
+                                            "_id_": 35383,
+                                            "_type": "String",
+                                            "value_": "isReadyForInput"
+                                        },
+                                        "value": {
+                                            "_id_": 35384,
+                                            "_type": "True"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 12893,
+                                        "_type": "LocalVariable",
+                                        "init": {
+                                            "_id_": 12894,
+                                            "_type": "Expression",
+                                            "text": {
+                                                "_id_": 12895,
+                                                "_type": "String",
+                                                "value_": "text"
+                                            }
+                                        },
+                                        "debug": {
+                                            "_id_": 31356,
+                                            "_type": "Debug"
+                                        },
+                                        "name": {
+                                            "_id_": 12896,
+                                            "_type": "String",
+                                            "value_": "json"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 12897,
+                                        "_type": "LocalVariable",
+                                        "init": {
+                                            "_id_": 12898,
+                                            "_type": "Expression",
+                                            "text": {
+                                                "_id_": 12899,
+                                                "_type": "String",
+                                                "value_": "JSON.parse(json)"
+                                            }
+                                        },
+                                        "name": {
+                                            "_id_": 12900,
+                                            "_type": "String",
+                                            "value_": "response"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 12904,
+                                        "_type": "CheckValue",
+                                        "onOther": {
+                                            "_id_": 12905,
+                                            "_type": "Sequence",
+                                            "list_": [
+                                                {
+                                                    "_id_": 12906,
+                                                    "_type": "Fragment.Set",
+                                                    "container": {
+                                                        "_id_": 12907,
+                                                        "_type": "View.Reference",
+                                                        "ref": {
+                                                            "_id_": 12908,
+                                                            "_type": "String",
+                                                            "value_": "@id\/resultContainer"
+                                                        }
+                                                    },
+                                                    "fragment": {
+                                                        "_id_": 12909,
+                                                        "_type": "Fragment.Reference",
+                                                        "name": {
+                                                            "_id_": 12910,
+                                                            "_type": "String",
+                                                            "value_": "result"
+                                                        }
+                                                    },
+                                                    "arguments": {
+                                                        "_id_": 12911,
+                                                        "_type": "AnObject",
+                                                        "fields": {
+                                                            "_id_": 12912,
+                                                            "_type": "List",
+                                                            "list_": [
+                                                                {
+                                                                    "_id_": 12913,
+                                                                    "_type": "KeyValue",
+                                                                    "value": {
+                                                                        "_id_": 12914,
+                                                                        "_type": "Expression",
+                                                                        "text": {
+                                                                            "_id_": 12915,
+                                                                            "_type": "String",
+                                                                            "value_": "response.result.choices[0].message.content"
+                                                                        }
+                                                                    },
+                                                                    "key": {
+                                                                        "_id_": 12916,
+                                                                        "_type": "String",
+                                                                        "value_": "text"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "_id_": 25960,
+                                                    "_type": "TextView.SetText",
+                                                    "view": {
+                                                        "_id_": 25962,
+                                                        "_type": "View.Reference",
+                                                        "ref": {
+                                                            "_id_": 25964,
+                                                            "_type": "String",
+                                                            "value_": "@id\/usage"
+                                                        }
+                                                    },
+                                                    "text": {
+                                                        "_id_": 25972,
+                                                        "_type": "String.Concat",
+                                                        "values": {
+                                                            "_id_": 25974,
+                                                            "_type": "List",
+                                                            "list_": [
+                                                                {
+                                                                    "_id_": 25976,
+                                                                    "_type": "String",
+                                                                    "value_": "Usage: daily "
+                                                                },
+                                                                {
+                                                                    "_id_": 25985,
+                                                                    "_type": "Expression",
+                                                                    "text": {
+                                                                        "_id_": 25986,
+                                                                        "_type": "String",
+                                                                        "value_": "response.usage.daily"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "_id_": 25982,
+                                                                    "_type": "String",
+                                                                    "value_": "\/"
+                                                                },
+                                                                {
+                                                                    "_id_": 26541,
+                                                                    "_type": "Expression",
+                                                                    "text": {
+                                                                        "_id_": 26542,
+                                                                        "_type": "String",
+                                                                        "value_": "response.limits.daily"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "_id_": 26533,
+                                                                    "_type": "String",
+                                                                    "value_": ", monthly "
+                                                                },
+                                                                {
+                                                                    "_id_": 26547,
+                                                                    "_type": "Expression",
+                                                                    "text": {
+                                                                        "_id_": 26548,
+                                                                        "_type": "String",
+                                                                        "value_": "response.usage.monthly"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "_id_": 26545,
+                                                                    "_type": "String",
+                                                                    "value_": "\/"
+                                                                },
+                                                                {
+                                                                    "_id_": 25978,
+                                                                    "_type": "Expression",
+                                                                    "text": {
+                                                                        "_id_": 25980,
+                                                                        "_type": "String",
+                                                                        "value_": "response.limits.monthly"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "onObject": {
+                                            "_id_": 12920,
+                                            "_type": "Fragment.Set",
+                                            "container": {
+                                                "_id_": 12921,
+                                                "_type": "View.Reference",
+                                                "ref": {
+                                                    "_id_": 12922,
+                                                    "_type": "String",
+                                                    "value_": "@id\/container"
+                                                }
+                                            },
+                                            "fragment": {
+                                                "_id_": 12923,
+                                                "_type": "Fragment.Reference",
+                                                "name": {
+                                                    "_id_": 12924,
+                                                    "_type": "String",
+                                                    "value_": "serverError"
+                                                }
+                                            },
+                                            "arguments": {
+                                                "_id_": 12925,
+                                                "_type": "AnObject",
+                                                "fields": {
+                                                    "_id_": 12926,
+                                                    "_type": "List",
+                                                    "list_": [
+                                                        {
+                                                            "_id_": 12927,
+                                                            "_type": "KeyValue",
+                                                            "value": {
+                                                                "_id_": 12928,
+                                                                "_type": "Expression",
+                                                                "text": {
+                                                                    "_id_": 12929,
+                                                                    "_type": "String",
+                                                                    "value_": "response.error.m"
+                                                                }
+                                                            },
+                                                            "key": {
+                                                                "_id_": 12930,
+                                                                "_type": "String",
+                                                                "value_": "error"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "value": {
+                                            "_id_": 12931,
+                                            "_type": "Expression",
+                                            "text": {
+                                                "_id_": 12932,
+                                                "_type": "String",
+                                                "value_": "response.error"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "_id_": 12780,
+                "_type": "Function",
+                "name": {
+                    "_id_": 12781,
+                    "_type": "String",
+                    "value_": "makeErrorMessage"
+                },
+                "body": {
+                    "_id_": 12782,
+                    "_type": "Sequence",
+                    "list_": [
+                        {
+                            "_id_": 34023,
+                            "_type": "Argument",
+                            "name": {
+                                "_id_": 34025,
+                                "_type": "String",
+                                "value_": "text"
+                            }
+                        },
+                        {
+                            "_id_": 34035,
+                            "_type": "LocalVariable",
+                            "init": {
+                                "_id_": 34039,
+                                "_type": "Expression",
+                                "text": {
+                                    "_id_": 34041,
+                                    "_type": "String",
+                                    "value_": "JSON.parse(text)"
+                                }
+                            },
+                            "name": {
+                                "_id_": 34037,
+                                "_type": "String",
+                                "value_": "data"
+                            }
+                        },
+                        {
+                            "_id_": 34043,
+                            "_type": "CheckValue",
+                            "onObject": {
+                                "_id_": 34697,
+                                "_type": "Sequence",
+                                "list_": [
+                                    {
+                                        "_id_": 34699,
+                                        "_type": "LocalVariable",
+                                        "init": {
+                                            "_id_": 34703,
+                                            "_type": "Expression",
+                                            "text": {
+                                                "_id_": 34705,
+                                                "_type": "String",
+                                                "value_": "data.error.c"
+                                            }
+                                        },
+                                        "name": {
+                                            "_id_": 34701,
+                                            "_type": "String",
+                                            "value_": "code"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 34707,
+                                        "_type": "CheckValue",
+                                        "onTrue": {
+                                            "_id_": 34717,
+                                            "_type": "Return",
+                                            "value": {
+                                                "_id_": 34723,
+                                                "_type": "String.Concat",
+                                                "values": {
+                                                    "_id_": 34725,
+                                                    "_type": "List",
+                                                    "list_": [
+                                                        {
+                                                            "_id_": 34727,
+                                                            "_type": "String",
+                                                            "value_": "Your daily usage reached the limit."
+                                                        },
+                                                        {
+                                                            "_id_": 35442,
+                                                            "_type": "Expression",
+                                                            "text": {
+                                                                "_id_": 35443,
+                                                                "_type": "String",
+                                                                "value_": "\"\\n\""
+                                                            }
+                                                        },
+                                                        {
+                                                            "_id_": 35446,
+                                                            "_type": "String",
+                                                            "value_": "It will be reset in "
+                                                        },
+                                                        {
+                                                            "_id_": 34729,
+                                                            "_type": "Expression",
+                                                            "text": {
+                                                                "_id_": 34731,
+                                                                "_type": "String",
+                                                                "value_": "Math.floor(data.usage.resetDaily\/(1000*3600))+\" hours and \"+ Math.floor((data.usage.resetDaily\/(1000*60))%60)+\" minutes\""
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "onFalse": {
+                                            "_id_": 35401,
+                                            "_type": "CheckValue",
+                                            "onTrue": {
+                                                "_id_": 35412,
+                                                "_type": "Return",
+                                                "value": {
+                                                    "_id_": 35413,
+                                                    "_type": "String.Concat",
+                                                    "values": {
+                                                        "_id_": 35414,
+                                                        "_type": "List",
+                                                        "list_": [
+                                                            {
+                                                                "_id_": 35415,
+                                                                "_type": "String",
+                                                                "value_": "Your monthly usage reached the limit."
+                                                            },
+                                                            {
+                                                                "_id_": 35436,
+                                                                "_type": "Expression",
+                                                                "text": {
+                                                                    "_id_": 35437,
+                                                                    "_type": "String",
+                                                                    "value_": "\"\\n\""
+                                                                }
+                                                            },
+                                                            {
+                                                                "_id_": 35440,
+                                                                "_type": "String",
+                                                                "value_": "It will be reset in "
+                                                            },
+                                                            {
+                                                                "_id_": 35416,
+                                                                "_type": "Expression",
+                                                                "text": {
+                                                                    "_id_": 35417,
+                                                                    "_type": "String",
+                                                                    "value_": "Math.floor(data.usage.resetMonthly\/(1000*3600*24))+\" days and \"+ Math.floor((data.usage.resetMonthly\/(1000*3600))%24)+\" hours\""
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "onFalse": {
+                                                "_id_": 35423,
+                                                "_type": "Return",
+                                                "value": {
+                                                    "_id_": 35430,
+                                                    "_type": "Expression",
+                                                    "text": {
+                                                        "_id_": 35431,
+                                                        "_type": "String",
+                                                        "value_": "data.error.m"
+                                                    }
+                                                }
+                                            },
+                                            "value": {
+                                                "_id_": 35406,
+                                                "_type": "Expression",
+                                                "text": {
+                                                    "_id_": 35407,
+                                                    "_type": "String",
+                                                    "value_": "code==12"
+                                                }
+                                            }
+                                        },
+                                        "value": {
+                                            "_id_": 34709,
+                                            "_type": "Expression",
+                                            "text": {
+                                                "_id_": 34711,
+                                                "_type": "String",
+                                                "value_": "code==11"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "value": {
+                                "_id_": 34045,
+                                "_type": "Expression",
+                                "text": {
+                                    "_id_": 34047,
+                                    "_type": "String",
+                                    "value_": "data.error"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "_id_": 2776,
+                "_type": "Fragment",
+                "layout": {
+                    "_id_": 2777,
+                    "_type": "LinearLayout",
+                    "id": {
+                        "_id_": 2778,
+                        "_type": "String",
+                        "value_": ""
+                    },
+                    "views": {
+                        "_id_": 2779,
+                        "_type": "ViewList",
+                        "list_": [
+                            {
+                                "_id_": 2780,
+                                "_type": "TextView",
+                                "id": {
+                                    "_id_": 2781,
+                                    "_type": "String",
+                                    "value_": ""
+                                },
+                                "android:text": {
+                                    "_id_": 2782,
+                                    "_type": "String",
+                                    "value_": "You need to sign in."
+                                },
+                                "android:layout_margin": {
+                                    "_id_": 2783,
+                                    "_type": "Dimension",
+                                    "unit": {
+                                        "_id_": 2784,
+                                        "_type": "DimensionUnit",
+                                        "value_": "dp"
+                                    },
+                                    "value": {
+                                        "_id_": 2785,
+                                        "_type": "Float",
+                                        "value_": 20
+                                    }
+                                }
+                            },
+                            {
+                                "_id_": 2786,
+                                "_type": "Button",
+                                "onClick": {
+                                    "_id_": 24815,
+                                    "_type": "Call",
+                                    "name": {
+                                        "_id_": 24816,
+                                        "_type": "String",
+                                        "value_": "signIn"
+                                    }
+                                },
+                                "id": {
+                                    "_id_": 2795,
+                                    "_type": "String",
+                                    "value_": ""
+                                },
+                                "android:text": {
+                                    "_id_": 2796,
+                                    "_type": "String",
+                                    "value_": "Sign In"
+                                },
+                                "android:layout_margin": {
+                                    "_id_": 2797,
+                                    "_type": "Dimension",
+                                    "unit": {
+                                        "_id_": 2798,
+                                        "_type": "DimensionUnit",
+                                        "value_": "dp"
+                                    },
+                                    "value": {
+                                        "_id_": 2799,
+                                        "_type": "Float",
+                                        "value_": 20
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "android:gravity": {
+                        "_id_": 2800,
+                        "_type": "Gravity",
+                        "value_": "center"
+                    },
+                    "android:orientation": {
+                        "_id_": 2801,
+                        "_type": "Orientation",
+                        "value_": "vertical"
+                    }
+                },
+                "name": {
+                    "_id_": 2802,
+                    "_type": "String",
+                    "value_": "signIn"
+                }
+            },
+            {
+                "_id_": 183,
+                "_type": "Fragment",
+                "layout": {
+                    "_id_": 17524,
+                    "_type": "RelativeLayout",
+                    "id": {
+                        "_id_": 17525,
+                        "_type": "String",
+                        "value_": ""
+                    },
+                    "views": {
+                        "_id_": 17526,
+                        "_type": "ViewList",
+                        "list_": [
+                            {
+                                "_id_": 17541,
+                                "_type": "LinearLayout",
+                                "id": {
+                                    "_id_": 17542,
+                                    "_type": "String",
+                                    "value_": ""
+                                },
+                                "views": {
+                                    "_id_": 17543,
+                                    "_type": "ViewList",
+                                    "list_": [
+                                        {
+                                            "_id_": 17544,
+                                            "_type": "LinearLayout",
+                                            "id": {
+                                                "_id_": 17545,
+                                                "_type": "String",
+                                                "value_": "inputCard"
+                                            },
+                                            "views": {
+                                                "_id_": 17546,
+                                                "_type": "ViewList",
+                                                "list_": [
+                                                    {
+                                                        "_id_": 17547,
+                                                        "_type": "EditText",
+                                                        "onInit": {
+                                                            "_id_": 17552,
+                                                            "_type": "Sequence",
+                                                            "list_": [
+                                                                {
+                                                                    "_id_": 17553,
+                                                                    "_type": "ScopeVariable",
+                                                                    "name": {
+                                                                        "_id_": 17554,
+                                                                        "_type": "String",
+                                                                        "value_": "view"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "_id_": 17555,
+                                                                    "_type": "TextView.SetText",
+                                                                    "view": {
+                                                                        "_id_": 17556,
+                                                                        "_type": "View.ThisView"
+                                                                    },
+                                                                    "text": {
+                                                                        "_id_": 17557,
+                                                                        "_type": "Variable.Get",
+                                                                        "name": {
+                                                                            "_id_": 17558,
+                                                                            "_type": "String",
+                                                                            "value_": "lastInput"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "id": {
+                                                            "_id_": 17559,
+                                                            "_type": "String",
+                                                            "value_": "input"
+                                                        },
+                                                        "enabledValue": {
+                                                            "_id_": 29526,
+                                                            "_type": "Variable.Get",
+                                                            "name": {
+                                                                "_id_": 29529,
+                                                                "_type": "String",
+                                                                "value_": "isReadyForInput"
+                                                            }
+                                                        },
+                                                        "android:layout_width": {
+                                                            "_id_": 17560,
+                                                            "_type": "View.SpecialDimension",
+                                                            "value_": "wrap_content"
+                                                        },
+                                                        "android:background": {
+                                                            "_id_": 17561,
+                                                            "_type": "DrawableReference",
+                                                            "ref": {
+                                                                "_id_": 17562,
+                                                                "_type": "String",
+                                                                "value_": "@null"
+                                                            }
+                                                        },
+                                                        "android:inputType": {
+                                                            "_id_": 17563,
+                                                            "_type": "TextView.InputType",
+                                                            "value_": "textMultiLine"
+                                                        },
+                                                        "android:maxLength": {
+                                                            "_id_": 30760,
+                                                            "_type": "Integer",
+                                                            "value_": 100
+                                                        },
+                                                        "android:layout_height": {
+                                                            "_id_": 17564,
+                                                            "_type": "View.SpecialDimension",
+                                                            "value_": "wrap_content"
+                                                        },
+                                                        "android:textSize": {
+                                                            "_id_": 17565,
+                                                            "_type": "Dimension",
+                                                            "unit": {
+                                                                "_id_": 17566,
+                                                                "_type": "DimensionUnit",
+                                                                "value_": "dp"
+                                                            },
+                                                            "value": {
+                                                                "_id_": 17567,
+                                                                "_type": "Float",
+                                                                "value_": 20
+                                                            }
+                                                        },
+                                                        "android:lines": {
+                                                            "_id_": 17568,
+                                                            "_type": "Integer",
+                                                            "value_": 4
+                                                        },
+                                                        "android:layout_weight": {
+                                                            "_id_": 17570,
+                                                            "_type": "Float",
+                                                            "value_": 1
+                                                        },
+                                                        "android:gravity": {
+                                                            "_id_": 17571,
+                                                            "_type": "Gravity",
+                                                            "value_": "top|start"
+                                                        }
+                                                    },
+                                                    {
+                                                        "_id_": 17572,
+                                                        "_type": "LinearLayout",
+                                                        "id": {
+                                                            "_id_": 17573,
+                                                            "_type": "String",
+                                                            "value_": ""
+                                                        },
+                                                        "views": {
+                                                            "_id_": 17574,
+                                                            "_type": "ViewList",
+                                                            "list_": [
+                                                                {
+                                                                    "_id_": 17575,
+                                                                    "_type": "ImageButton",
+                                                                    "onClick": {
+                                                                        "_id_": 24802,
+                                                                        "_type": "Sequence",
+                                                                        "list_": [
+                                                                            {
+                                                                                "_id_": 24803,
+                                                                                "_type": "ScopeVariable",
+                                                                                "name": {
+                                                                                    "_id_": 24804,
+                                                                                    "_type": "String",
+                                                                                    "value_": "view"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "_id_": 24806,
+                                                                                "_type": "TextView.SetText",
+                                                                                "view": {
+                                                                                    "_id_": 24808,
+                                                                                    "_type": "View.Reference",
+                                                                                    "ref": {
+                                                                                        "_id_": 24810,
+                                                                                        "_type": "String",
+                                                                                        "value_": "@id\/input"
+                                                                                    }
+                                                                                },
+                                                                                "text": {
+                                                                                    "_id_": 24812,
+                                                                                    "_type": "String",
+                                                                                    "value_": ""
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "id": {
+                                                                        "_id_": 17576,
+                                                                        "_type": "String",
+                                                                        "value_": "erase"
+                                                                    },
+                                                                    "enabledValue": {
+                                                                        "_id_": 29530,
+                                                                        "_type": "Variable.Get",
+                                                                        "name": {
+                                                                            "_id_": 29531,
+                                                                            "_type": "String",
+                                                                            "value_": "isReadyForInput"
+                                                                        }
+                                                                    },
+                                                                    "style": {
+                                                                        "_id_": 18393,
+                                                                        "_type": "StyleReference",
+                                                                        "ref": {
+                                                                            "_id_": 18395,
+                                                                            "_type": "String",
+                                                                            "value_": "@style\/imageButtonStyle"
+                                                                        }
+                                                                    },
+                                                                    "android:src": {
+                                                                        "_id_": 17598,
+                                                                        "_type": "DrawableReference",
+                                                                        "ref": {
+                                                                            "_id_": 17599,
+                                                                            "_type": "String",
+                                                                            "value_": "@drawable\/clear"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "_id_": 17655,
+                                                                    "_type": "View",
+                                                                    "id": {
+                                                                        "_id_": 17657,
+                                                                        "_type": "String",
+                                                                        "value_": ""
+                                                                    },
+                                                                    "android:layout_width": {
+                                                                        "_id_": 17660,
+                                                                        "_type": "Dimension",
+                                                                        "unit": {
+                                                                            "_id_": 17661,
+                                                                            "_type": "DimensionUnit",
+                                                                            "value_": "dp"
+                                                                        },
+                                                                        "value": {
+                                                                            "_id_": 17662,
+                                                                            "_type": "Float",
+                                                                            "value_": 0
+                                                                        }
+                                                                    },
+                                                                    "android:layout_height": {
+                                                                        "_id_": 17664,
+                                                                        "_type": "Dimension",
+                                                                        "unit": {
+                                                                            "_id_": 17665,
+                                                                            "_type": "DimensionUnit",
+                                                                            "value_": "dp"
+                                                                        },
+                                                                        "value": {
+                                                                            "_id_": 17666,
+                                                                            "_type": "Float",
+                                                                            "value_": 0
+                                                                        }
+                                                                    },
+                                                                    "android:layout_weight": {
+                                                                        "_id_": 17667,
+                                                                        "_type": "Float",
+                                                                        "value_": 1
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "_id_": 17600,
+                                                                    "_type": "ImageButton",
+                                                                    "onClick": {
+                                                                        "_id_": 17601,
+                                                                        "_type": "Call",
+                                                                        "name": {
+                                                                            "_id_": 17602,
+                                                                            "_type": "String",
+                                                                            "value_": "submit"
+                                                                        }
+                                                                    },
+                                                                    "id": {
+                                                                        "_id_": 17603,
+                                                                        "_type": "String",
+                                                                        "value_": "done"
+                                                                    },
+                                                                    "enabledValue": {
+                                                                        "_id_": 29532,
+                                                                        "_type": "Variable.Get",
+                                                                        "name": {
+                                                                            "_id_": 29533,
+                                                                            "_type": "String",
+                                                                            "value_": "isReadyForInput"
+                                                                        }
+                                                                    },
+                                                                    "style": {
+                                                                        "_id_": 18396,
+                                                                        "_type": "StyleReference",
+                                                                        "ref": {
+                                                                            "_id_": 18397,
+                                                                            "_type": "String",
+                                                                            "value_": "@style\/imageButtonStyle"
+                                                                        }
+                                                                    },
+                                                                    "android:src": {
+                                                                        "_id_": 17625,
+                                                                        "_type": "DrawableReference",
+                                                                        "ref": {
+                                                                            "_id_": 17626,
+                                                                            "_type": "String",
+                                                                            "value_": "@drawable\/check"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "android:layout_width": {
+                                                            "_id_": 17628,
+                                                            "_type": "View.SpecialDimension",
+                                                            "value_": "wrap_content"
+                                                        },
+                                                        "android:layout_height": {
+                                                            "_id_": 17629,
+                                                            "_type": "View.SpecialDimension",
+                                                            "value_": "match_parent"
+                                                        },
+                                                        "android:orientation": {
+                                                            "_id_": 17631,
+                                                            "_type": "Orientation",
+                                                            "value_": "vertical"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "style": {
+                                                "_id_": 22656,
+                                                "_type": "StyleReference",
+                                                "ref": {
+                                                    "_id_": 22658,
+                                                    "_type": "String",
+                                                    "value_": "@style\/cardStyle"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "_id_": 17643,
+                                            "_type": "FragmentContainerView",
+                                            "id": {
+                                                "_id_": 17644,
+                                                "_type": "String",
+                                                "value_": "resultContainer"
+                                            },
+                                            "views": {
+                                                "_id_": 17645,
+                                                "_type": "ViewList",
+                                                "list_": []
+                                            },
+                                            "android:layout_width": {
+                                                "_id_": 17646,
+                                                "_type": "View.SpecialDimension",
+                                                "value_": "match_parent"
+                                            },
+                                            "android:layout_height": {
+                                                "_id_": 17647,
+                                                "_type": "View.SpecialDimension",
+                                                "value_": "wrap_content"
+                                            }
+                                        },
+                                        {
+                                            "_id_": 25920,
+                                            "_type": "View",
+                                            "id": {
+                                                "_id_": 25921,
+                                                "_type": "String",
+                                                "value_": ""
+                                            },
+                                            "android:layout_width": {
+                                                "_id_": 25922,
+                                                "_type": "Dimension",
+                                                "unit": {
+                                                    "_id_": 25923,
+                                                    "_type": "DimensionUnit",
+                                                    "value_": "dp"
+                                                },
+                                                "value": {
+                                                    "_id_": 25924,
+                                                    "_type": "Float",
+                                                    "value_": 0
+                                                }
+                                            },
+                                            "android:layout_height": {
+                                                "_id_": 25925,
+                                                "_type": "Dimension",
+                                                "unit": {
+                                                    "_id_": 25926,
+                                                    "_type": "DimensionUnit",
+                                                    "value_": "dp"
+                                                },
+                                                "value": {
+                                                    "_id_": 25927,
+                                                    "_type": "Float",
+                                                    "value_": 0
+                                                }
+                                            },
+                                            "android:layout_weight": {
+                                                "_id_": 25928,
+                                                "_type": "Float",
+                                                "value_": 1
+                                            }
+                                        },
+                                        {
+                                            "_id_": 25948,
+                                            "_type": "TextView",
+                                            "id": {
+                                                "_id_": 25951,
+                                                "_type": "String",
+                                                "value_": "usage"
+                                            },
+                                            "android:layout_width": {
+                                                "_id_": 25952,
+                                                "_type": "View.SpecialDimension",
+                                                "value_": "match_parent"
+                                            },
+                                            "android:layout_height": {
+                                                "_id_": 25953,
+                                                "_type": "View.SpecialDimension",
+                                                "value_": "wrap_content"
+                                            },
+                                            "android:singleLine": {
+                                                "_id_": 25958,
+                                                "_type": "Boolean",
+                                                "value_": true
+                                            },
+                                            "android:gravity": {
+                                                "_id_": 27101,
+                                                "_type": "Gravity",
+                                                "value_": "center"
+                                            },
+                                            "android:paddingHorizontal": {
+                                                "_id_": 25955,
+                                                "_type": "Dimension",
+                                                "unit": {
+                                                    "_id_": 25956,
+                                                    "_type": "DimensionUnit",
+                                                    "value_": "dp"
+                                                },
+                                                "value": {
+                                                    "_id_": 25957,
+                                                    "_type": "Float",
+                                                    "value_": 10
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "android:layout_width": {
+                                    "_id_": 17648,
+                                    "_type": "Dimension",
+                                    "unit": {
+                                        "_id_": 17649,
+                                        "_type": "DimensionUnit",
+                                        "value_": "dp"
+                                    },
+                                    "value": {
+                                        "_id_": 17650,
+                                        "_type": "Float",
+                                        "value_": 360
+                                    }
+                                },
+                                "android:layout_centerInParent": {
+                                    "_id_": 17651,
+                                    "_type": "Boolean",
+                                    "value_": true
+                                },
+                                "android:gravity": {
+                                    "_id_": 17652,
+                                    "_type": "Gravity",
+                                    "value_": "top"
+                                },
+                                "android:orientation": {
+                                    "_id_": 17653,
+                                    "_type": "Orientation",
+                                    "value_": "vertical"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "name": {
+                    "_id_": 185,
+                    "_type": "String",
+                    "value_": "translator"
+                }
+            },
+            {
+                "_id_": 3496,
+                "_type": "Fragment",
+                "onViewCreated": {
+                    "_id_": 3497,
+                    "_type": "Sequence",
+                    "list_": [
+                        {
+                            "_id_": 3498,
+                            "_type": "ScopeVariable",
+                            "name": {
+                                "_id_": 3499,
+                                "_type": "String",
+                                "value_": "fragment"
+                            }
+                        },
+                        {
+                            "_id_": 3500,
+                            "_type": "ScopeVariable",
+                            "name": {
+                                "_id_": 3501,
+                                "_type": "String",
+                                "value_": "view"
+                            }
+                        },
+                        {
+                            "_id_": 3502,
+                            "_type": "ScopeVariable",
+                            "name": {
+                                "_id_": 3503,
+                                "_type": "String",
+                                "value_": "savedState"
+                            }
+                        },
+                        {
+                            "_id_": 3504,
+                            "_type": "TextView.SetText",
+                            "view": {
+                                "_id_": 3505,
+                                "_type": "View.Reference",
+                                "ref": {
+                                    "_id_": 3506,
+                                    "_type": "String",
+                                    "value_": "@id\/errorMessage"
+                                }
+                            },
+                            "text": {
+                                "_id_": 3507,
+                                "_type": "Expression",
+                                "text": {
+                                    "_id_": 3508,
+                                    "_type": "String",
+                                    "value_": "fragment.getArguments().getString(\"error\")"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "layout": {
+                    "_id_": 3509,
+                    "_type": "LinearLayout",
+                    "id": {
+                        "_id_": 3510,
+                        "_type": "String",
+                        "value_": ""
+                    },
+                    "views": {
+                        "_id_": 3511,
+                        "_type": "ViewList",
+                        "list_": [
+                            {
+                                "_id_": 3512,
+                                "_type": "TextView",
+                                "id": {
+                                    "_id_": 3513,
+                                    "_type": "String",
+                                    "value_": "errorMessage"
+                                },
+                                "android:gravity": {
+                                    "_id_": 3514,
+                                    "_type": "Gravity",
+                                    "value_": "center"
+                                },
+                                "android:layout_margin": {
+                                    "_id_": 24819,
+                                    "_type": "Dimension",
+                                    "unit": {
+                                        "_id_": 24820,
+                                        "_type": "DimensionUnit",
+                                        "value_": "dp"
+                                    },
+                                    "value": {
+                                        "_id_": 24821,
+                                        "_type": "Float",
+                                        "value_": 20
+                                    }
+                                }
+                            },
+                            {
+                                "_id_": 3515,
+                                "_type": "Button",
+                                "onClick": {
+                                    "_id_": 24817,
+                                    "_type": "Call",
+                                    "name": {
+                                        "_id_": 24818,
+                                        "_type": "String",
+                                        "value_": "signIn"
+                                    }
+                                },
+                                "id": {
+                                    "_id_": 3519,
+                                    "_type": "String",
+                                    "value_": ""
+                                },
+                                "android:text": {
+                                    "_id_": 3520,
+                                    "_type": "String",
+                                    "value_": "Try Again"
+                                },
+                                "android:layout_margin": {
+                                    "_id_": 3521,
+                                    "_type": "Dimension",
+                                    "unit": {
+                                        "_id_": 3522,
+                                        "_type": "DimensionUnit",
+                                        "value_": "dp"
+                                    },
+                                    "value": {
+                                        "_id_": 3523,
+                                        "_type": "Float",
+                                        "value_": 20
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "android:gravity": {
+                        "_id_": 3524,
+                        "_type": "Gravity",
+                        "value_": "center"
+                    },
+                    "android:orientation": {
+                        "_id_": 3525,
+                        "_type": "Orientation",
+                        "value_": "vertical"
+                    }
+                },
+                "name": {
+                    "_id_": 3526,
+                    "_type": "String",
+                    "value_": "signInError"
+                }
+            },
+            {
+                "_id_": 7240,
+                "_type": "Fragment",
+                "layout": {
+                    "_id_": 7241,
+                    "_type": "LinearLayout",
+                    "id": {
+                        "_id_": 7242,
+                        "_type": "String",
+                        "value_": ""
+                    },
+                    "views": {
+                        "_id_": 7243,
+                        "_type": "ViewList",
+                        "list_": [
+                            {
+                                "_id_": 7244,
+                                "_type": "TextView",
+                                "id": {
+                                    "_id_": 7245,
+                                    "_type": "String",
+                                    "value_": ""
+                                },
+                                "android:text": {
+                                    "_id_": 7246,
+                                    "_type": "String",
+                                    "value_": "Please wait..."
+                                },
+                                "android:gravity": {
+                                    "_id_": 7247,
+                                    "_type": "Gravity",
+                                    "value_": "center"
+                                }
+                            },
+                            {
+                                "_id_": 7248,
+                                "_type": "ProgressBar",
+                                "type": {
+                                    "_id_": 7249,
+                                    "_type": "ProgressBar.Type",
+                                    "value_": "indeterminate"
+                                },
+                                "id": {
+                                    "_id_": 7250,
+                                    "_type": "String",
+                                    "value_": ""
+                                },
+                                "android:layout_width": {
+                                    "_id_": 7251,
+                                    "_type": "Dimension",
+                                    "unit": {
+                                        "_id_": 7252,
+                                        "_type": "DimensionUnit",
+                                        "value_": "dp"
+                                    },
+                                    "value": {
+                                        "_id_": 7253,
+                                        "_type": "Float",
+                                        "value_": 50
+                                    }
+                                },
+                                "android:layout_height": {
+                                    "_id_": 7254,
+                                    "_type": "Dimension",
+                                    "unit": {
+                                        "_id_": 7255,
+                                        "_type": "DimensionUnit",
+                                        "value_": "dp"
+                                    },
+                                    "value": {
+                                        "_id_": 7256,
+                                        "_type": "Float",
+                                        "value_": 50
+                                    }
+                                },
+                                "android:layout_margin": {
+                                    "_id_": 7257,
+                                    "_type": "Dimension",
+                                    "unit": {
+                                        "_id_": 7258,
+                                        "_type": "DimensionUnit",
+                                        "value_": "dp"
+                                    },
+                                    "value": {
+                                        "_id_": 7259,
+                                        "_type": "Float",
+                                        "value_": 20
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "android:gravity": {
+                        "_id_": 7260,
+                        "_type": "Gravity",
+                        "value_": "center"
+                    },
+                    "android:orientation": {
+                        "_id_": 7261,
+                        "_type": "Orientation",
+                        "value_": "vertical"
+                    }
+                },
+                "name": {
+                    "_id_": 7262,
+                    "_type": "String",
+                    "value_": "wait"
+                }
+            },
+            {
+                "_id_": 7286,
+                "_type": "Fragment",
+                "layout": {
+                    "_id_": 7287,
+                    "_type": "LinearLayout",
+                    "id": {
+                        "_id_": 7288,
+                        "_type": "String",
+                        "value_": ""
+                    },
+                    "views": {
+                        "_id_": 7289,
+                        "_type": "ViewList",
+                        "list_": [
+                            {
+                                "_id_": 7353,
+                                "_type": "ProgressBar",
+                                "type": {
+                                    "_id_": 7354,
+                                    "_type": "ProgressBar.Type",
+                                    "value_": "indeterminate"
+                                },
+                                "id": {
+                                    "_id_": 7355,
+                                    "_type": "String",
+                                    "value_": "wait"
+                                },
+                                "android:layout_width": {
+                                    "_id_": 7356,
+                                    "_type": "Dimension",
+                                    "unit": {
+                                        "_id_": 7357,
+                                        "_type": "DimensionUnit",
+                                        "value_": "dp"
+                                    },
+                                    "value": {
+                                        "_id_": 7358,
+                                        "_type": "Float",
+                                        "value_": 30
+                                    }
+                                },
+                                "android:layout_height": {
+                                    "_id_": 7359,
+                                    "_type": "Dimension",
+                                    "unit": {
+                                        "_id_": 7360,
+                                        "_type": "DimensionUnit",
+                                        "value_": "dp"
+                                    },
+                                    "value": {
+                                        "_id_": 7361,
+                                        "_type": "Float",
+                                        "value_": 30
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "android:gravity": {
+                        "_id_": 7306,
+                        "_type": "Gravity",
+                        "value_": "center"
+                    },
+                    "android:orientation": {
+                        "_id_": 7307,
+                        "_type": "Orientation",
+                        "value_": "vertical"
+                    }
+                },
+                "name": {
+                    "_id_": 7308,
+                    "_type": "String",
+                    "value_": "processing"
+                }
+            },
+            {
+                "_id_": 250,
+                "_type": "Fragment",
+                "layout": {
+                    "_id_": 22661,
+                    "_type": "LinearLayout",
+                    "id": {
+                        "_id_": 22662,
+                        "_type": "String",
+                        "value_": ""
+                    },
+                    "views": {
+                        "_id_": 22663,
+                        "_type": "ViewList",
+                        "list_": [
+                            {
+                                "_id_": 22664,
+                                "_type": "TextView",
+                                "id": {
+                                    "_id_": 22665,
+                                    "_type": "String",
+                                    "value_": "result"
+                                },
+                                "textValue": {
+                                    "_id_": 22666,
+                                    "_type": "Fragment.Argument",
+                                    "name": {
+                                        "_id_": 22667,
+                                        "_type": "String",
+                                        "value_": "text"
+                                    }
+                                },
+                                "android:layout_width": {
+                                    "_id_": 22668,
+                                    "_type": "View.SpecialDimension",
+                                    "value_": "wrap_content"
+                                },
+                                "android:textSize": {
+                                    "_id_": 22669,
+                                    "_type": "Dimension",
+                                    "unit": {
+                                        "_id_": 22670,
+                                        "_type": "DimensionUnit",
+                                        "value_": "sp"
+                                    },
+                                    "value": {
+                                        "_id_": 22671,
+                                        "_type": "Float",
+                                        "value_": 30
+                                    }
+                                },
+                                "android:padding": {
+                                    "_id_": 22672,
+                                    "_type": "Dimension",
+                                    "unit": {
+                                        "_id_": 22673,
+                                        "_type": "DimensionUnit",
+                                        "value_": "dp"
+                                    },
+                                    "value": {
+                                        "_id_": 22674,
+                                        "_type": "Float",
+                                        "value_": 10
+                                    }
+                                },
+                                "android:layout_gravity": {
+                                    "_id_": 22675,
+                                    "_type": "Gravity",
+                                    "value_": "center_vertical"
+                                },
+                                "android:layout_weight": {
+                                    "_id_": 22676,
+                                    "_type": "Float",
+                                    "value_": 1
+                                },
+                                "android:textColor": {
+                                    "_id_": 22677,
+                                    "_type": "Color",
+                                    "color_": -1
+                                }
+                            },
+                            {
+                                "_id_": 22678,
+                                "_type": "ImageButton",
+                                "onClick": {
+                                    "_id_": 23222,
+                                    "_type": "Sequence",
+                                    "list_": [
+                                        {
+                                            "_id_": 23223,
+                                            "_type": "ScopeVariable",
+                                            "name": {
+                                                "_id_": 23224,
+                                                "_type": "String",
+                                                "value_": "view"
+                                            }
+                                        },
+                                        {
+                                            "_id_": 23741,
+                                            "_type": "Clipboard.SetText",
+                                            "text": {
+                                                "_id_": 23747,
+                                                "_type": "TextView.GetText",
+                                                "view": {
+                                                    "_id_": 24273,
+                                                    "_type": "View.Reference",
+                                                    "ref": {
+                                                        "_id_": 24275,
+                                                        "_type": "String",
+                                                        "value_": "@id\/result"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "_id_": 24277,
+                                            "_type": "ShowToast",
+                                            "message": {
+                                                "_id_": 24279,
+                                                "_type": "String",
+                                                "value_": "Copied to clipboard"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "id": {
+                                    "_id_": 22679,
+                                    "_type": "String",
+                                    "value_": ""
+                                },
+                                "style": {
+                                    "_id_": 22706,
+                                    "_type": "StyleReference",
+                                    "ref": {
+                                        "_id_": 22707,
+                                        "_type": "String",
+                                        "value_": "@style\/imageButtonStyle"
+                                    }
+                                },
+                                "android:src": {
+                                    "_id_": 22701,
+                                    "_type": "DrawableReference",
+                                    "ref": {
+                                        "_id_": 22702,
+                                        "_type": "String",
+                                        "value_": "@drawable\/copy"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "style": {
+                        "_id_": 22704,
+                        "_type": "StyleReference",
+                        "ref": {
+                            "_id_": 22705,
+                            "_type": "String",
+                            "value_": "@style\/cardStyle"
+                        }
+                    }
+                },
+                "name": {
+                    "_id_": 262,
+                    "_type": "String",
+                    "value_": "result"
+                }
+            },
+            {
+                "_id_": 3406,
+                "_type": "Fragment",
+                "layout": {
+                    "_id_": 3419,
+                    "_type": "LinearLayout",
+                    "id": {
+                        "_id_": 3420,
+                        "_type": "String",
+                        "value_": ""
+                    },
+                    "views": {
+                        "_id_": 3421,
+                        "_type": "ViewList",
+                        "list_": [
+                            {
+                                "_id_": 3422,
+                                "_type": "TextView",
+                                "onInit": {
+                                    "_id_": 32571,
+                                    "_type": "Sequence",
+                                    "list_": [
+                                        {
+                                            "_id_": 32572,
+                                            "_type": "ScopeVariable",
+                                            "name": {
+                                                "_id_": 32573,
+                                                "_type": "String",
+                                                "value_": "view"
+                                            }
+                                        },
+                                        {
+                                            "_id_": 32584,
+                                            "_type": "LocalVariable",
+                                            "init": {
+                                                "_id_": 32585,
+                                                "_type": "Fragment.Argument",
+                                                "name": {
+                                                    "_id_": 32586,
+                                                    "_type": "String",
+                                                    "value_": "text"
+                                                }
+                                            },
+                                            "name": {
+                                                "_id_": 32587,
+                                                "_type": "String",
+                                                "value_": "text"
+                                            }
+                                        },
+                                        {
+                                            "_id_": 32575,
+                                            "_type": "LocalVariable",
+                                            "init": {
+                                                "_id_": 32582,
+                                                "_type": "Fragment.Argument",
+                                                "name": {
+                                                    "_id_": 32583,
+                                                    "_type": "String",
+                                                    "value_": "exception"
+                                                }
+                                            },
+                                            "name": {
+                                                "_id_": 32577,
+                                                "_type": "String",
+                                                "value_": "exception"
+                                            }
+                                        },
+                                        {
+                                            "_id_": 32658,
+                                            "_type": "TextView.SetText",
+                                            "view": {
+                                                "_id_": 33327,
+                                                "_type": "View.ThisView"
+                                            },
+                                            "text": {
+                                                "_id_": 32677,
+                                                "_type": "CheckValue",
+                                                "onOther": {
+                                                    "_id_": 32678,
+                                                    "_type": "CheckValue",
+                                                    "onNonNull": {
+                                                        "_id_": 33955,
+                                                        "_type": "Call",
+                                                        "name": {
+                                                            "_id_": 34026,
+                                                            "_type": "String",
+                                                            "value_": "makeErrorMessage"
+                                                        },
+                                                        "arguments": {
+                                                            "_id_": 34028,
+                                                            "_type": "List",
+                                                            "list_": [
+                                                                {
+                                                                    "_id_": 34030,
+                                                                    "_type": "LocalVariable.Get",
+                                                                    "name": {
+                                                                        "_id_": 34033,
+                                                                        "_type": "String",
+                                                                        "value_": "text"
+                                                                    }
+                                                                }
+                                                            ],
+                                                            "elementType_": "Action"
+                                                        }
+                                                    },
+                                                    "onOther": {
+                                                        "_id_": 32696,
+                                                        "_type": "String",
+                                                        "value_": "Error"
+                                                    },
+                                                    "value": {
+                                                        "_id_": 32681,
+                                                        "_type": "LocalVariable.Get",
+                                                        "name": {
+                                                            "_id_": 33949,
+                                                            "_type": "String",
+                                                            "value_": "text"
+                                                        }
+                                                    }
+                                                },
+                                                "onObject": {
+                                                    "_id_": 32689,
+                                                    "_type": "Expression",
+                                                    "text": {
+                                                        "_id_": 32690,
+                                                        "_type": "String",
+                                                        "value_": "exception.getMessage()"
+                                                    }
+                                                },
+                                                "value": {
+                                                    "_id_": 32687,
+                                                    "_type": "LocalVariable.Get",
+                                                    "name": {
+                                                        "_id_": 32688,
+                                                        "_type": "String",
+                                                        "value_": "exception"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "id": {
+                                    "_id_": 3423,
+                                    "_type": "String",
+                                    "value_": "errorMessage"
+                                },
+                                "android:gravity": {
+                                    "_id_": 3424,
+                                    "_type": "Gravity",
+                                    "value_": "center"
+                                }
+                            },
+                            {
+                                "_id_": 3425,
+                                "_type": "Button",
+                                "onClick": {
+                                    "_id_": 24833,
+                                    "_type": "Fragment.Set",
+                                    "container": {
+                                        "_id_": 24834,
+                                        "_type": "View.Reference",
+                                        "ref": {
+                                            "_id_": 24835,
+                                            "_type": "String",
+                                            "value_": "@id\/container"
+                                        }
+                                    },
+                                    "fragment": {
+                                        "_id_": 24836,
+                                        "_type": "Fragment.Reference",
+                                        "name": {
+                                            "_id_": 24837,
+                                            "_type": "String",
+                                            "value_": "translator"
+                                        }
+                                    }
+                                },
+                                "id": {
+                                    "_id_": 3429,
+                                    "_type": "String",
+                                    "value_": ""
+                                },
+                                "android:text": {
+                                    "_id_": 3430,
+                                    "_type": "String",
+                                    "value_": "OK"
+                                },
+                                "android:layout_margin": {
+                                    "_id_": 3431,
+                                    "_type": "Dimension",
+                                    "unit": {
+                                        "_id_": 3432,
+                                        "_type": "DimensionUnit",
+                                        "value_": "dp"
+                                    },
+                                    "value": {
+                                        "_id_": 3433,
+                                        "_type": "Float",
+                                        "value_": 20
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "android:gravity": {
+                        "_id_": 3434,
+                        "_type": "Gravity",
+                        "value_": "center"
+                    },
+                    "android:orientation": {
+                        "_id_": 3435,
+                        "_type": "Orientation",
+                        "value_": "vertical"
+                    }
+                },
+                "name": {
+                    "_id_": 3436,
+                    "_type": "String",
+                    "value_": "serverError"
+                }
+            },
+            {
+                "_id_": 8599,
+                "_type": "DrawableResource",
+                "drawable": {
+                    "_id_": 8601,
+                    "_type": "ShapeDrawable.Rectangle",
+                    "corners": {
+                        "_id_": 8612,
+                        "_type": "ShapeDrawable.Corners",
+                        "radius": {
+                            "_id_": 8614,
+                            "_type": "Dimension",
+                            "unit": {
+                                "_id_": 8615,
+                                "_type": "DimensionUnit",
+                                "value_": "dp"
+                            },
+                            "value": {
+                                "_id_": 8616,
+                                "_type": "Float",
+                                "value_": 10
+                            }
+                        }
+                    },
+                    "stroke": {
+                        "_id_": 8604,
+                        "_type": "ShapeDrawable.Stroke",
+                        "color": {
+                            "_id_": 8606,
+                            "_type": "Color",
+                            "color_": -8158333
+                        },
+                        "width": {
+                            "_id_": 8608,
+                            "_type": "Dimension",
+                            "unit": {
+                                "_id_": 8609,
+                                "_type": "DimensionUnit",
+                                "value_": "dp"
+                            },
+                            "value": {
+                                "_id_": 8610,
+                                "_type": "Float",
+                                "value_": 2
+                            }
+                        }
+                    }
+                },
+                "name": {
+                    "_id_": 8602,
+                    "_type": "String",
+                    "value_": "rounded_border"
+                }
+            },
+            {
+                "_id_": 11540,
+                "_type": "ColorResource",
+                "color": {
+                    "_id_": 11541,
+                    "_type": "Color",
+                    "color_": -12679640
+                },
+                "name": {
+                    "_id_": 11542,
+                    "_type": "String",
+                    "value_": "primary"
+                }
+            },
+            {
+                "_id_": 12019,
+                "_type": "ColorResource",
+                "color": {
+                    "_id_": 12020,
+                    "_type": "Color",
+                    "color_": -13322437
+                },
+                "configuration": {
+                    "_id_": 12021,
+                    "_type": "ResourceConfiguration",
+                    "nightMode": {
+                        "_id_": 12022,
+                        "_type": "App.ResourceConfiguration.NightMode",
+                        "value_": "night"
+                    }
+                },
+                "name": {
+                    "_id_": 12023,
+                    "_type": "String",
+                    "value_": "primary"
+                }
+            },
+            {
+                "_id_": 22598,
+                "_type": "StyleResource",
+                "name": {
+                    "_id_": 22599,
+                    "_type": "String",
+                    "value_": "cardStyle"
+                },
+                "style": {
+                    "_id_": 22600,
+                    "_type": "Style",
+                    "android:layout_width": {
+                        "_id_": 22644,
+                        "_type": "View.SpecialDimension",
+                        "value_": "match_parent"
+                    },
+                    "android:background": {
+                        "_id_": 22645,
+                        "_type": "DrawableReference",
+                        "ref": {
+                            "_id_": 22646,
+                            "_type": "String",
+                            "value_": "@drawable\/rounded_border"
+                        }
+                    },
+                    "android:layout_height": {
+                        "_id_": 22647,
+                        "_type": "View.SpecialDimension",
+                        "value_": "wrap_content"
+                    },
+                    "android:padding": {
+                        "_id_": 22648,
+                        "_type": "Dimension",
+                        "unit": {
+                            "_id_": 22649,
+                            "_type": "DimensionUnit",
+                            "value_": "dp"
+                        },
+                        "value": {
+                            "_id_": 22650,
+                            "_type": "Float",
+                            "value_": 10
+                        }
+                    },
+                    "android:orientation": {
+                        "_id_": 22651,
+                        "_type": "Orientation",
+                        "value_": "horizontal"
+                    },
+                    "android:layout_margin": {
+                        "_id_": 22652,
+                        "_type": "Dimension",
+                        "unit": {
+                            "_id_": 22653,
+                            "_type": "DimensionUnit",
+                            "value_": "dp"
+                        },
+                        "value": {
+                            "_id_": 22654,
+                            "_type": "Float",
+                            "value_": 20
+                        }
+                    }
+                }
+            },
+            {
+                "_id_": 17669,
+                "_type": "StyleResource",
+                "name": {
+                    "_id_": 17672,
+                    "_type": "String",
+                    "value_": "imageButtonStyle"
+                },
+                "style": {
+                    "_id_": 17671,
+                    "_type": "Style",
+                    "android:layout_width": {
+                        "_id_": 18372,
+                        "_type": "Dimension",
+                        "unit": {
+                            "_id_": 18373,
+                            "_type": "DimensionUnit",
+                            "value_": "dp"
+                        },
+                        "value": {
+                            "_id_": 18374,
+                            "_type": "Float",
+                            "value_": 40
+                        }
+                    },
+                    "android:background": {
+                        "_id_": 18378,
+                        "_type": "ShapeDrawable.Rectangle",
+                        "corners": {
+                            "_id_": 18379,
+                            "_type": "ShapeDrawable.Corners",
+                            "radius": {
+                                "_id_": 18380,
+                                "_type": "Dimension",
+                                "unit": {
+                                    "_id_": 18381,
+                                    "_type": "DimensionUnit",
+                                    "value_": "dp"
+                                },
+                                "value": {
+                                    "_id_": 18382,
+                                    "_type": "Float",
+                                    "value_": 20
+                                }
+                            }
+                        },
+                        "color": {
+                            "_id_": 18383,
+                            "_type": "StateListColor",
+                            "items": {
+                                "_id_": 18384,
+                                "_type": "ColorSelectorList",
+                                "list_": [
+                                    {
+                                        "_id_": 18385,
+                                        "_type": "ColorSelectorItem",
+                                        "color": {
+                                            "_id_": 18386,
+                                            "_type": "Color",
+                                            "color_": -12945131
+                                        },
+                                        "state_pressed": {
+                                            "_id_": 18387,
+                                            "_type": "Boolean",
+                                            "value_": true
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "android:layout_height": {
+                        "_id_": 18375,
+                        "_type": "Dimension",
+                        "unit": {
+                            "_id_": 18376,
+                            "_type": "DimensionUnit",
+                            "value_": "dp"
+                        },
+                        "value": {
+                            "_id_": 18377,
+                            "_type": "Float",
+                            "value_": 40
+                        }
+                    },
+                    "android:scaleType": {
+                        "_id_": 18388,
+                        "_type": "ImageView.ScaleType",
+                        "value_": "fitXY"
+                    },
+                    "android:layout_marginStart": {
+                        "_id_": 18389,
+                        "_type": "Dimension",
+                        "unit": {
+                            "_id_": 18390,
+                            "_type": "DimensionUnit",
+                            "value_": "dp"
+                        },
+                        "value": {
+                            "_id_": 18391,
+                            "_type": "Float",
+                            "value_": 10
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "settings": {
+        "_id_": 6,
+        "_type": "App.Settings",
+        "debugBuild": {
+            "_id_": 8,
+            "_type": "App.Settings.DebugBuild"
+        },
+        "releaseBuild": {
+            "_id_": 10,
+            "_type": "App.Settings.ReleaseBuild"
+        }
+    },
+    "theme": {
+        "_id_": 10535,
+        "_type": "Theme.Material.DayNight",
+        "statusBarMatchingActivity": {
+            "_id_": 19083,
+            "_type": "Boolean",
+            "value_": true
+        },
+        "colorPrimary": {
+            "_id_": 11065,
+            "_type": "ColorReference",
+            "ref": {
+                "_id_": 11066,
+                "_type": "String",
+                "value_": "@color\/primary"
+            }
+        }
+    },
+    "packaging": {
+        "_id_": 12,
+        "_type": "App.Packaging",
+        "icon": {
+            "_id_": 54,
+            "_type": "DrawableReference",
+            "ref": {
+                "_id_": 55,
+                "_type": "String",
+                "value_": "@drawable\/app_icon"
+            }
+        },
+        "targetSdk": {
+            "_id_": 17,
+            "_type": "Integer",
+            "value_": 34
+        },
+        "label": {
+            "_id_": 53,
+            "_type": "String",
+            "value_": "AI Emoji"
+        },
+        "versionName": {
+            "_id_": 19,
+            "_type": "String",
+            "value_": "1.0"
+        },
+        "versionCode": {
+            "_id_": 20,
+            "_type": "Integer",
+            "value_": 1
+        },
+        "minSdk": {
+            "_id_": 21,
+            "_type": "Integer",
+            "value_": 24
+        },
+        "permissions": {
+            "_id_": 23,
+            "_type": "App.Permissions"
+        },
+        "packageName": {
+            "_id_": 52,
+            "_type": "String",
+            "value_": "com.aaappps.openai.emoji"
+        }
+    },
+    "_abVer": 234
+}

@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "830343162366",
+    "firebase_url": "https://ab-openai-default-rtdb.firebaseio.com",
+    "project_id": "ab-openai",
+    "storage_bucket": "ab-openai.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830343162366:android:c8422427e161a232a978af",
+        "android_client_info": {
+          "package_name": "com.aaappps.openai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830343162366-lk9na03bqemf3vtl9l082pko9gjgsir5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aaappps.openai",
+            "certificate_hash": "e58a55bcfb7e44a0a88dc1743785e6f7a82e34af"
+          }
+        },
+        {
+          "client_id": "830343162366-atqig4mt0mph8r333r48mnbdiefptcev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMm4kP2Cph8yx5I8nkpnOxaqVcq9Shvv4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830343162366-atqig4mt0mph8r333r48mnbdiefptcev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830343162366:android:57c2a38eeed9957ea978af",
+        "android_client_info": {
+          "package_name": "com.aaappps.openai.emoji"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830343162366-09skbsksi40bslt4ga66l4phsi1jff44.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aaappps.openai.emoji",
+            "certificate_hash": "e58a55bcfb7e44a0a88dc1743785e6f7a82e34af"
+          }
+        },
+        {
+          "client_id": "830343162366-atqig4mt0mph8r333r48mnbdiefptcev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMm4kP2Cph8yx5I8nkpnOxaqVcq9Shvv4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830343162366-atqig4mt0mph8r333r48mnbdiefptcev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
